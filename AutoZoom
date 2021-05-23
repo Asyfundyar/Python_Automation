@@ -1,0 +1,11 @@
+from datetime import datetime
+from pynput.keyboard import Controller
+import webbrowser
+
+keyboard = Controller()
+meeting = ["INSERT_MEETING_LINK", "INSERT_MEETING_START_TIME"]
+
+while True:
+    if datetime.now().hour == int(meeting[1].split(':')[0]) and datetime.now().minute == int(meeting[1].split(':')[1]):
+        webbrowser.open(meeting[0])
+        break
